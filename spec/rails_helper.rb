@@ -48,6 +48,7 @@ RSpec.configure do |config|
   # Add this line to utilize factorybot
   # config.include FactoryBot::Syntax::Methods
 
+
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
 
@@ -84,3 +85,4 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.configure_rspec_metadata!
 end
+

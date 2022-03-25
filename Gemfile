@@ -53,7 +53,6 @@ group :test do
   gem 'webmock'
   gem 'vcr'
   gem 'shoulda-matchers'
-  gem 'rspec-rails'
 end
 
 

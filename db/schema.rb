@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2022_03_25_060753) do
   enable_extension "plpgsql"
 
   create_table "stories", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.integer "total_time"
     t.string "body_text"
     t.string "image"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2022_03_25_060753) do
     t.string "sound"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_stories_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,4 +34,5 @@ ActiveRecord::Schema.define(version: 2022_03_25_060753) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "stories", "users"
 end

@@ -8,8 +8,10 @@ RSpec.describe User, type: :model do
   end
 
   describe 'validations' do
+    it { should have_many :stories }
     it { should validate_presence_of :username }
     it { should validate_presence_of :email }
+    it { should validate_uniqueness_of :email }
   end
 
 end

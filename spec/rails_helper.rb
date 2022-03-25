@@ -43,7 +43,7 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
    # Include the spec/support module when testing requests
-  config.include RequestSpecHelper, type: :request
+  # config.include RequestSpecHelper, type: :request
 
   # Add this line to utilize factorybot
   # config.include FactoryBot::Syntax::Methods
@@ -85,4 +85,3 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.configure_rspec_metadata!
 end
-

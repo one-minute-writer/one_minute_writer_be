@@ -5,6 +5,7 @@ RSpec.describe Story, type: :model do
   it 'exists' do
     story = create(:story)
     expect(story).to be_a Story
+    expect(story.user).to be_a User
   end
 
   describe 'validations' do

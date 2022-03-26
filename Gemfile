@@ -27,6 +27,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faraday'
 gem 'jsonapi-serializer'
 gem 'email_validator'
+gem 'graphql', '1.9.18'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
@@ -43,6 +44,7 @@ group :development, :test do
   gem 'rubocop-rspec'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'graphiql-rails'
 end
 
 group :development do

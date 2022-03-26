@@ -29,6 +29,7 @@ query {
     ]
   }
 }
+```
 ## Get User (Query)
  - Request
 ```

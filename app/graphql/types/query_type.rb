@@ -9,5 +9,7 @@ module Types
     def test_field
       "Hello World!"
     end
+
+    field :fetch_users, resolver: Queries::FetchUsers
   end
 end

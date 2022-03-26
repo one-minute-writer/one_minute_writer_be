@@ -23,7 +23,7 @@ Please check the relevant option.
 
 # Where should reviewers start?
 
-<!-- Include a short comment about what reviewers should be paying attention to in this PR and if there is anything they should disreagrd. -->
+<!-- Include a short comment about what reviewers should be paying attention to in this PR and if there is anything they should disregard. -->
 
 # How Has This Been Tested?
 

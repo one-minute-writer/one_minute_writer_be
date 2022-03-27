@@ -1,6 +1,11 @@
 # GraphQL
+## Table of Contents:
+* [Users](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#Users)
+  * [Get Users (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#GetUsers(Query))
+* [Stories](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#Stories)
 
-## Get Users (Query)
+## Users
+### Get Users (Query)
  - Request
 ```
 query {
@@ -139,6 +144,61 @@ mutation {
       "user": {
         "username": "Galen"
       }
+    }
+  }
+}
+```
+
+## Stories
+
+### Get Stories (Query)
+ - Request
+```
+query {
+  fetchStories {
+    id
+    title
+    word
+  }
+}
+```
+ - Response
+ ```
+ {
+  "data": {
+    "fetchStories": [
+      {
+        "id": "10",
+        "title": "expedita",
+        "word": "saepe"
+      },
+      {
+        "id": "9",
+        "title": "earum",
+        "word": "qui"
+      }, ...
+    ]
+  }
+}
+```
+
+## Get Story (Query)
+ - Request
+```
+query {
+  fetchStory(id: 1) {
+    id
+    title
+  }
+}
+```
+ - Response
+ ```
+{
+  "data": {
+    "fetchStory": {
+      "id": "1",
+      "title": "dolor"
     }
   }
 }

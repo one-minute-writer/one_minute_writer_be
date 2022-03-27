@@ -12,6 +12,7 @@ module Types
 
     field :fetch_users, resolver: Queries::FetchUsers
     field :fetch_user, resolver: Queries::FetchUser
-
+    field :fetch_stories, resolver: Queries::FetchStories
+    field :fetch_story, resolver: Queries::FetchStory
   end
 end

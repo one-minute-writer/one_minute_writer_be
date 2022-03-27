@@ -58,7 +58,8 @@ query {
  - Request
 ```
 mutation {
-  addUser(input: { params: { username: "Clifford", email: "cliff@bigred.com" } }) {
+  createUser(input: 
+    { username: "Lassie", email: "sillyboy@inwell.com" } ) {
   	user {
     	username
     	email
@@ -70,38 +71,44 @@ mutation {
 ```
 {
   "data": {
-    "addUser": {
+    "createUser": {
       "user": {
-        "username": "Clifford",
-        "email": "cliff@bigred.com"
+        "username": "Lassie",
+        "email": "sillyboy@inwell.com"
       }
     }
   }
 }
 ```
 
-## Edit User
+## Update User
  - Request
 ```
 mutation {
-  editUser(input: { params: { username: "Bob Ward", email: "bob@athens.com" }}) {
-    user {
-      id
-      username
-      email
+  updateUser(
+    input: {
+      id: "1",
+      username: "Bob Lee Swagger",
+      email: "blees@gmail.com"
     }
-  }
+  ) { 
+      user {
+        username
+        id
+        email
+      }
+    }
 }
 ```
  - Response
  ```
- {
+{
   "data": {
-    "editUser": {
+    "updateUser": {
       "user": {
-        "id": "7",
-        "username": "Bob Ward",
-        "email": "bob@athens.com"
+        "username": "Bob Lee Swagger",
+        "id": "1",
+        "email": "blees@gmail.com"
       }
     }
   }

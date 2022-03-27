@@ -3,6 +3,7 @@
 * [Users](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#Users)
   * [Get Users (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#GetUsers(Query))
 * [Stories](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#Stories)
+  * [Get Story (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#GetStory(Query))
 
 ## Users
 ### Get Users (Query)

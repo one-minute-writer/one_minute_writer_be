@@ -1,14 +1,14 @@
 # GraphQL
 ## Table of Contents:
 * [Users](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#Users)
-  * [Get Users (Query)](https://github.com/one-minute-writer/one_minute_writer_be/edit/graphql/GraphqlNotes.md#get-users-query)
-  * [Get User (Query)](https://github.com/one-minute-writer/one_minute_writer_be/edit/graphql/GraphqlNotes.md#get-user-query)
-  * [Create New User](https://github.com/one-minute-writer/one_minute_writer_be/edit/graphql/GraphqlNotes.md#create-new-user)
-  * [UpdateUser](https://github.com/one-minute-writer/one_minute_writer_be/edit/graphql/GraphqlNotes.md#update-user)
-  * [Delete User](https://github.com/one-minute-writer/one_minute_writer_be/edit/graphql/GraphqlNotes.md#delete-user)
+  * [Get Users (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#get-users-query)
+  * [Get User (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#get-user-query)
+  * [Create New User](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#create-new-user)
+  * [UpdateUser](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#update-user)
+  * [Delete User](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#delete-user)
 * [Stories](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#Stories)
-  * [Get Stories (Query)](https://github.com/one-minute-writer/one_minute_writer_be/edit/graphql/GraphqlNotes.md#get-stories-query)
-  * [Get Story (Query)](https://github.com/one-minute-writer/one_minute_writer_be/edit/graphql/GraphqlNotes.md#get-story-query)
+  * [Get Stories (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#get-stories-query)
+  * [Get Story (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#get-story-query)
 
 ## Users
 ### Get Users (Query)

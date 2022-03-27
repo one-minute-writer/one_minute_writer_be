@@ -7,3 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 FactoryBot.create_list(:user, 5)
+FactoryBot.create_list(:story, 10, user: User.first)

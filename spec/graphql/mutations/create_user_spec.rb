@@ -4,14 +4,15 @@ RSpec.describe Types::QueryType do
   describe 'create user' do
     def query
       <<~GQL
-            mutation {
-        addUser(input: { params: { username: "Bob", email: "bob@athens.com" } }) {
-        	user {
-          	username
-          	email
+        mutation {
+          createUser(input: 
+            { username: "Lassie", email: "sillyboy@inwell.com" } ) {
+  	      user {
+    	      username
+    	      email
+          }
           }
         }
-      }
       GQL
     end
 
@@ -23,8 +24,8 @@ RSpec.describe Types::QueryType do
 
       expect(current_user_count).to eq(user_record_length + 1)
       expect(symbolized).to be_a Hash
-      expect(symbolized[:data][:addUser][:user]).to have_key(:username)
-      expect(symbolized[:data][:addUser][:user]).to have_key(:email)
+      expect(symbolized[:data][:createUser][:user]).to have_key(:username)
+      expect(symbolized[:data][:createUser][:user]).to have_key(:email)
     end
   end
 

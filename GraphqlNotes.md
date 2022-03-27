@@ -114,3 +114,32 @@ mutation {
   }
 }
 ```
+
+## Delete User
+ - Request
+```
+mutation {
+        deleteUser(
+          input: {
+            id: "3",
+          }
+        ) { user {
+            username
+          }
+        }
+      }
+        
+
+```
+ - Response
+ ```
+{
+  "data": {
+    "deleteUser": {
+      "user": {
+        "username": "Galen"
+      }
+    }
+  }
+}
+```

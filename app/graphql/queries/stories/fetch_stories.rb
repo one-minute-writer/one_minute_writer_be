@@ -1,10 +1,12 @@
 module Queries
-  class FetchStories < Queries::BaseQuery
+  module Stories
+    class FetchStories < Queries::BaseQuery
 
-    type [Types::StoryType], null: false
+      type [Types::StoryType], null: false
 
-    def resolve
-      Story.all.order(created_at: :desc)
+      def resolve
+        Story.all.order(created_at: :desc)
+      end
     end
   end
 end

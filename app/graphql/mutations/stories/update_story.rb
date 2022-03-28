@@ -1,16 +1,24 @@
 module Mutations
   module Stories
     class UpdateStory < Mutations::BaseMutation
-      # TODO: define return fields
-      # field :post, Types::PostType, null: false
+      argument :id, ID, required: true
+      argument :title, String, required: false
+      argument :body_text, String, required: false
+      argument :word, String, required: false
+      argument :image, String, required: false
+      argument :sound, String, required: false
+      argument :total_time_in_seconds, Integer, required: false
 
-      # TODO: define arguments
-      # argument :name, String, required: true
+      field :story, Types::StoryType, null: false
 
-      # TODO: define resolve method
-      # def resolve(name:)
-      #   { post: ... }
-      # end
+      def resolve(attributes)
+        begin
+          story = Story.find(attributes[:id])
+          story.update(attributes)
+
+          {story: story}
+        end
+      end
     end
   end
 end

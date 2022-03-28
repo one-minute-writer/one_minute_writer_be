@@ -1,10 +1,12 @@
 module Queries
-  class FetchUsers < Queries::BaseQuery
+  module Users
+    class FetchUsers < Queries::BaseQuery
 
-    type [Types::UserType], null: false
+      type [Types::UserType], null: false
 
-    def resolve
-      User.all.order(created_at: :desc)
+      def resolve
+        User.all.order(created_at: :desc)
+      end
     end
   end
 end

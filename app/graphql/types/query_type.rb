@@ -7,5 +7,6 @@ module Types
     field :fetch_user, resolver: Queries::Users::FetchUser
     field :fetch_stories, resolver: Queries::Stories::FetchStories
     field :fetch_story, resolver: Queries::Stories::FetchStory
+    #field :errors
   end
 end

@@ -2,9 +2,10 @@ class Story < ApplicationRecord
   belongs_to :user
 
   validates_presence_of :user_id,
-                        :total_time,
+                        :title,
+                        :total_time_in_seconds,
                         :body_text,
                         :image,
-                        :words,
+                        :word,
                         :sound
 end

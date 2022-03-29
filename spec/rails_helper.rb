@@ -42,7 +42,9 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
-   # Include the spec/support module when testing requests
+
+  config.include RequestSpecHelper, type: :request
+  # Include the spec/support module when testing requests
   # config.include RequestSpecHelper, type: :request
 
   # Add this line to utilize factorybot

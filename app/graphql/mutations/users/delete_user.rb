@@ -11,9 +11,8 @@ module Mutations
           user.destroy
 
           {user: user}
-        rescue ActiveRecord::RecordInvalid => e
-          GraphQL::ExecutionError.new("Invalid attributes for #{e.record.class}:"\
-            " #{e.record.errors.full_messages.join(', ')}")
+        rescue ActiveRecord::RecordNotFound => e
+          GraphQL::ExecutionError.new("Could not find user.")
         end
       end
     end

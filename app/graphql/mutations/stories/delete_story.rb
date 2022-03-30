@@ -11,9 +11,8 @@ module Mutations
           story.destroy
 
           {story: story}
-        # rescue ActiveRecord::RecordInvalid => e
-        #   GraphQL::ExecutionError.new("Invalid id for #{e.record.class}:"\
-        #     " #{e.record.errors.full_messages.join(', ')}")
+        rescue ActiveRecord::RecordNotFound => e
+          GraphQL::ExecutionError.new("Could not find story.")
         end
       end
     end

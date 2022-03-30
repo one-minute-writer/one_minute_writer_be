@@ -18,7 +18,21 @@ module Mutations
           GQL
         end
 
-        it 'updates a user' do
+        def bad_query
+          <<~GQL
+            mutation {
+              createUser(input:
+                { username: "", email: "sillyboy@inwell.com" } ) {
+      	      user {
+        	      username
+        	      email
+              }
+              }
+            }
+          GQL
+        end
+
+        it 'creates a user' do
           expect(User.count).to eq(0)
 
           post '/graphql', params: { query: query }
@@ -29,6 +43,14 @@ module Mutations
           expect(data).to be_a Hash
           expect(data[:createUser][:user]).to have_key(:username)
           expect(data[:createUser][:user]).to have_key(:email)
+        end
+
+        it 'fails to create a user' do 
+          post '/graphql', params: { query: bad_query }
+
+          response = parse_json
+
+          expect(response[:errors].first[:message]).to eq("Invalid attributes for User: Username can't be blank")
         end
       end
     end

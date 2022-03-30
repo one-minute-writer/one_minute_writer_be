@@ -49,6 +49,11 @@ query {
     id
     username
     email
+    stories {
+      id
+      title
+      word
+    }
   }
 }
 ```
@@ -58,8 +63,15 @@ query {
   "data": {
     "fetchUser": {
       "id": "1",
-      "username": "Archimedes",
-      "email": "jack@leannon-boyer.info"
+      "username": "Solon",
+      "email": "rodolfo.schoen@runte.com",
+      "stories": [
+        {
+          "id": "1",
+          "title": "Blood's a Rover",
+          "word": "aut"
+        },...
+      ]
     }
   }
 }

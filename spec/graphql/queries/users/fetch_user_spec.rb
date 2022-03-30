@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Types::QueryType, type: :request do
+RSpec.describe FetchUsers, type: :request do
   def query
     <<~GQL
       {

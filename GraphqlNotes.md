@@ -4,7 +4,7 @@
   * [Get Users (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#get-users-query)
   * [Get User (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#get-user-query)
   * [Create New User](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#create-new-user)
-  * [Update User](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#update-user)
+  * [Update User](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#update-user)
   * [Delete User](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#delete-user)
 * [Stories](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#Stories)
   * [Get Stories (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#get-stories-query)

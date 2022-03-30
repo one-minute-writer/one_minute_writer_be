@@ -1,6 +1,6 @@
 # GraphQL
 ## Table of Contents:
-* [Users](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#Users)
+* [Users](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#users)
   * [Get Users (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#get-users-query)
   * [Get User (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#get-user-query)
   * [Create New User](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#create-new-user)

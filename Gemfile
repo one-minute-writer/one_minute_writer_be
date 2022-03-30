@@ -29,7 +29,7 @@ gem 'jsonapi-serializer'
 gem 'email_validator'
 gem 'graphql', '1.9.18'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

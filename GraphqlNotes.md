@@ -281,3 +281,31 @@ mutation {
     }
 }
 ```
+
+## Delete Story
+ - Request
+```
+mutation {
+  deleteStory(input: 
+    { id: 14 } ) {
+  	story {
+    	title
+    	bodyText
+    }
+  }
+}
+
+```
+ - Response
+ ```
+{
+    "data": {
+        "deleteStory": {
+            "story": {
+                "title": "y",
+                "bodyText": "x"
+            }
+        }
+    }
+}
+```

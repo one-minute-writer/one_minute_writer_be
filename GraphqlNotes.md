@@ -245,3 +245,38 @@ mutation {
     }
 }
 ```
+
+## Update Story
+ - Request
+```
+mutation {
+  updateStory(input: 
+    { id: 2, title: "test", bodyText: "new body text", (other attributes etc.) } ) {
+  	story {
+    	title
+    	bodyText
+        word
+        image
+        sound
+        totalTimeInSeconds
+    }
+  }
+}
+```
+ - Response
+ ```
+{
+    "data": {
+        "updateStory": {
+            "story": {
+                "title": "test",
+                "bodyText": "new body text",
+                "word": "example",
+                "image": "example",
+                "sound": "example",
+                "totalTimeInSeconds": 120
+            }
+        }
+    }
+}
+```

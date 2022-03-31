@@ -209,3 +209,38 @@ query {
   }
 }
 ```
+
+## Create Story
+ - Request
+```
+mutation {
+  createStory(input: 
+    { userId: 1, title: "Thoughts", bodyText: "hello world", word: "test", image: "test_url", sound: "sample_url", totalTimeInSeconds: 120 } ) {
+  	story {
+    	title
+    	bodyText
+        word
+        image
+        sound
+        totalTimeInSeconds
+    }
+  }
+}
+```
+ - Response
+ ```
+{
+    "data": {
+        "createStory": {
+            "story": {
+                "title": "Thoughts",
+                "bodyText": "hello world",
+                "word": "test",
+                "image": "test_url",
+                "sound": "sample_url",
+                "totalTimeInSeconds": 120
+            }
+        }
+    }
+}
+```

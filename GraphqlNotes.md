@@ -11,6 +11,7 @@
   * [Get Story (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#get-story-query)
   * [Create Story](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#create-story)
   * [Update Story](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#update-story)
+  * [Delete Story](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#delete-story)
 
 ## Users
 ### Get Users (Query)

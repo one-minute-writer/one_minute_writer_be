@@ -90,13 +90,13 @@ module Mutations
       end
 
       it 'updates a story' do
-        @story = create(:story)
+        story = create(:story)
 
         post '/graphql', params: { query: query }
 
         data = parse_json[:data]
 
-        expect(data[:updateStory][:story][:id]).to eq(@story.id.to_s)
+        expect(data[:updateStory][:story][:id]).to eq(story.id.to_s)
         expect(data[:updateStory][:story][:title]).to eq("New Title")
         expect(data[:updateStory][:story][:bodyText]).to eq("New Text")
         expect(data[:updateStory][:story][:image]).to eq("Sample image")

@@ -40,8 +40,8 @@ module Mutations
       end
 
       it 'deletes a story' do
-        stories = create_list(:story, 5)
-        @story = create(:story, title: 'Deleted')
+        create_list(:story, 5)
+        story = create(:story, title: 'Deleted')
 
         post '/graphql', params: { query: query }
 

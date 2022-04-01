@@ -50,13 +50,13 @@ module Mutations
         end
 
         it 'updates a user' do
-          @bob = create(:user, id: 1001, username: "Bob", email: "Bobathan@gmail.com")
+          bob = create(:user, id: 1001, username: "Bob", email: "Bobathan@gmail.com")
 
           post '/graphql', params: { query: query }
 
           data = parse_json[:data]
 
-          expect(data[:updateUser][:user][:id]).to eq(@bob.id.to_s)
+          expect(data[:updateUser][:user][:id]).to eq(bob.id.to_s)
           expect(data[:updateUser][:user][:username]).to eq('Bob Lee Swagger')
           expect(data[:updateUser][:user][:email]).to eq('blees@gmail.com')
         end
@@ -72,7 +72,7 @@ module Mutations
         end
 
         it 'does not update with other attributes (sad path)' do
-          @bob = create(:user, id: 1001, username: "Bob", email: "Bobathan@gmail.com")
+          bob = create(:user, id: 1001, username: "Bob", email: "Bobathan@gmail.com")
 
           post '/graphql', params: { query: bad_query }
 

@@ -7,11 +7,11 @@ module Queries
         <<~GQL
           {
             fetchUser(id: #{User.first.id}) {
-            id
-            username
-            email
+              id
+              username
+              email
+            }
           }
-        }
         GQL
       end
 

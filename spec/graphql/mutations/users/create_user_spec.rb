@@ -7,12 +7,17 @@ module Mutations
         def query
           <<~GQL
             mutation {
-              createUser(input:
-                { username: "Lassie", email: "sillyboy@inwell.com" } ) {
-      	      user {
-        	      username
-        	      email
-              }
+              createUser(
+                input: { 
+                  username: "Lassie", 
+                  email: "sillyboy@inwell.com" 
+                } 
+              ) 
+              {
+                user {
+                    username
+                    email
+                }
               }
             }
           GQL
@@ -20,13 +25,19 @@ module Mutations
 
         def bad_query
           <<~GQL
-            mutation {
-              createUser(input:
-                { username: "", email: "sillyboy@inwell.com" } ) {
-      	      user {
-        	      username
-        	      email
-              }
+            mutation 
+            {
+              createUser(
+                input: { 
+                  username: "", 
+                  email: "sillyboy@inwell.com" 
+                } 
+              ) 
+              {
+                user {
+                  username
+                  email
+                }
               }
             }
           GQL

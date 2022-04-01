@@ -6,32 +6,36 @@ module Mutations
       def query
         <<~GQL
           mutation {
-          deleteStory(
-            input: {
-              id: "#{@story.id}",
-            }
-          ) { story {
-              id
-              title
+            deleteStory(
+              input: {
+                id: "#{@story.id}",
+              }
+            ) 
+            { 
+              story {
+                id
+                title
+              }
             }
           }
-        }
         GQL
       end
 
       def bad_query
         <<~GQL
           mutation {
-          deleteStory(
-            input: {
-              id: "10900",
-            }
-          ) { story {
-              id
-              title
+            deleteStory(
+              input: {
+                id: "10900",
+              }
+            ) 
+            { 
+              story {
+                id
+                title
+              }
             }
           }
-        }
         GQL
       end
 

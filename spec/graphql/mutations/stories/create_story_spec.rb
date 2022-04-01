@@ -7,21 +7,25 @@ module Mutations
         def query
           <<~GQL
             mutation {
-              createStory(input:
-              { userId: #{User.last.id},
-                title: "Thoughts",
-                bodyText: "hello world",
-                word: "test",
-                image: "http://test-url",
-                sound: "echo",
-                totalTimeInSeconds: 120 } ) {
-            	story {
-              	title
-              	bodyText
-                word
-                image
-                sound
-                totalTimeInSeconds
+              createStory(
+                input: { 
+                  userId: #{User.last.id},
+                 title: "Thoughts",
+                  bodyText: "hello world",
+                  word: "test",
+                  image: "http://test-url",
+                  sound: "echo",
+                  totalTimeInSeconds: 120 
+                } 
+              ) 
+              {
+                story {
+                  title
+                  bodyText
+                  word
+                  image
+                  sound
+                  totalTimeInSeconds
                 }
               }
             }
@@ -31,19 +35,23 @@ module Mutations
         def bad_query
           <<~GQL
             mutation {
-              createStory(input:
-              { title: "Thoughts",
-                bodyText: "hello world",
-                word: "test",
-                sound: "echo",
-                totalTimeInSeconds: 120 } ) {
-            	story {
-              	title
-              	bodyText
-                word
-                image
-                sound
-                totalTimeInSeconds
+              createStory(
+                input: { 
+                  title: "Thoughts",
+                  bodyText: "hello world",
+                  word: "test",
+                  sound: "echo",
+                  totalTimeInSeconds: 120 
+                } 
+              ) 
+              {
+            	  story {
+                  title
+                  bodyText
+                  word
+                  image
+                  sound
+                  totalTimeInSeconds
                 }
               }
             }

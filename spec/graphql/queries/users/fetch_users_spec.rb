@@ -5,13 +5,13 @@ module Queries
     RSpec.describe FetchUser, type: :request do
       def query
         <<~GQL
-        {
-          fetchUsers {
-            id
-            username
-            email
+          {
+            fetchUsers {
+              id
+              username
+              email
+            }
           }
-        }
         GQL
       end
 

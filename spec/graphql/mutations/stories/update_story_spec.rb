@@ -5,18 +5,20 @@ module Mutations
     RSpec.describe UpdateStory, type: :request do
       def query
         <<~GQL
-        mutation {
-          updateStory(
-            input: {
-              id: #{Story.last.id},
-              title: "New Title",
-              bodyText: "New Text",
-              image: "Sample image",
-              word: "Update",
-              sound: "Alert!",
-              totalTimeInSeconds: 5000
-              })
-              { story {
+          mutation {
+            updateStory(
+              input: {
+                id: #{Story.last.id},
+                title: "New Title",
+                bodyText: "New Text",
+                image: "Sample image",
+                word: "Update",
+                sound: "Alert!",
+                totalTimeInSeconds: 5000
+              }
+            )
+            { 
+              story {
                 id
                 title
                 bodyText
@@ -32,18 +34,20 @@ module Mutations
 
       def bad_id_query
         <<~GQL
-        mutation {
-          updateStory(
-            input: {
-              id: 150150
-              title: "New Title",
-              bodyText: "New Text",
-              image: "Sample image",
-              word: "Update",
-              sound: "Alert!",
-              totalTimeInSeconds: 5000
-              })
-              { story {
+          mutation {
+            updateStory(
+              input: {
+                id: 150150
+                title: "New Title",
+                bodyText: "New Text",
+                image: "Sample image",
+                word: "Update",
+                sound: "Alert!",
+                totalTimeInSeconds: 5000
+              }
+            )
+            { 
+              story {
                 id
                 title
                 bodyText
@@ -59,18 +63,20 @@ module Mutations
 
       def bad_attr_query
         <<~GQL
-        mutation {
-          updateStory(
-            input: {
-              id: #{Story.last.id}
-              title: "New Title",
-              bodyText: "New Text",
-              image: "Sample image",
-              word: "Update",
-              sound: 10,
-              totalTimeInSeconds: 5000
-              })
-              { story {
+          mutation {
+            updateStory(
+              input: {
+                id: #{Story.last.id}
+                title: "New Title",
+                bodyText: "New Text",
+                image: "Sample image",
+                word: "Update",
+                sound: 10,
+                totalTimeInSeconds: 5000
+              }
+            )
+            { 
+              story {
                 id
                 title
                 bodyText

@@ -7,34 +7,38 @@ module Mutations
 
         def query
           <<~GQL
-          mutation {
-            updateUser(
-              input: {
-                id: "1001",
-                username: "Bob Lee Swagger",
-                email: "blees@gmail.com"
-                })
-                { user {
+            mutation {
+              updateUser(
+                input: {
+                  id: "1001",
+                  username: "Bob Lee Swagger",
+                  email: "blees@gmail.com"
+                }
+              )
+              { 
+                user {
                   username
                   id
                   email
                 }
               }
             }
-            GQL
-          end
+          GQL
+        end
 
-          def bad_query
+        def bad_query
           <<~GQL
-          mutation {
-            updateUser(
-              input: {
-                id: "1001",
-                username: 10,
-                email: "blees@gmail.com",
-                location: "here"
-                })
-                { user {
+            mutation {
+              updateUser(
+                input: {
+                  id: "1001",
+                  username: 10,
+                  email: "blees@gmail.com",
+                  location: "here"
+                }
+              )
+              { 
+                user {
                   username
                   id
                   email
@@ -42,8 +46,8 @@ module Mutations
                 }
               }
             }
-            GQL
-          end
+          GQL
+        end
 
         it 'updates a user' do
           @bob = create(:user, id: 1001, username: "Bob", email: "Bobathan@gmail.com")

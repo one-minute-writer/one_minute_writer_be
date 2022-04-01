@@ -6,30 +6,34 @@ module Mutations
       def query
         <<~GQL
           mutation {
-          deleteUser(
-            input: {
-              id: "#{@bob.id}",
-            }
-          ) { user {
-              username
+            deleteUser(
+              input: {
+                id: "#{@bob.id}",
+              }
+            ) 
+            { 
+              user {
+                username
+              }
             }
           }
-        }
         GQL
       end
 
       def bad_query
         <<~GQL
           mutation {
-          deleteUser(
-            input: {
-              id: "0",
-            }
-          ) { user {
-              username
+            deleteUser(
+              input: {
+                id: "0",
+              }
+            ) 
+            { 
+              user {
+                username
+              }
             }
           }
-        }
         GQL
       end
 

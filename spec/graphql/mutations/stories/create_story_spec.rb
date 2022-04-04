@@ -8,16 +8,16 @@ module Mutations
           <<~GQL
             mutation {
               createStory(
-                input: { 
+                input: {
                   userId: #{User.last.id},
                  title: "Thoughts",
                   bodyText: "hello world",
                   word: "test",
                   image: "http://test-url",
                   sound: "echo",
-                  totalTimeInSeconds: 120 
-                } 
-              ) 
+                  totalTimeInSeconds: 120
+                }
+              )
               {
                 story {
                   title
@@ -36,14 +36,14 @@ module Mutations
           <<~GQL
             mutation {
               createStory(
-                input: { 
+                input: {
                   title: "Thoughts",
                   bodyText: "hello world",
                   word: "test",
                   sound: "echo",
-                  totalTimeInSeconds: 120 
-                } 
-              ) 
+                  totalTimeInSeconds: 120
+                }
+              )
               {
             	  story {
                   title
@@ -81,7 +81,7 @@ module Mutations
           response = parse_json
 
           expect(response[:errors].first[:message]).to eq("Argument 'userId' on InputObject 'CreateStoryInput' is required. Expected type Int!")
-          expect(response[:errors].last[:message]).to eq("Argument 'image' on InputObject 'CreateStoryInput' is required. Expected type String!")
+          expect(response[:errors].last[:message]).to eq("Argument 'image' on InputObject 'CreateStoryInput' is required. Expected type Image!")
         end
       end
     end

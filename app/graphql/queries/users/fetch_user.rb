@@ -6,6 +6,10 @@ module Queries
 
       def resolve(id:)
         User.find(id)
+        #user has to have updated metrics
+        #AR to get array of story ids
+        #send array to python/django
+        #add return value as an attribute to user (ie 'dashboard_metrics')
       rescue ActiveRecord::RecordNotFound => _e
         GraphQL::ExecutionError.new('User does not exist.')
       rescue ActiveRecord::RecordInvalid => e

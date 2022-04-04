@@ -8,15 +8,16 @@ module Mutations
           <<~GQL
             mutation {
               createUser(
-                input: { 
-                  username: "Lassie", 
-                  email: "sillyboy@inwell.com" 
-                } 
-              ) 
+                input: {
+                  username: "Lassie",
+                  email: "sillyboy@inwell.com"
+                }
+              )
               {
                 user {
                     username
                     email
+                    dashboard_metrics
                 }
               }
             }
@@ -25,14 +26,14 @@ module Mutations
 
         def bad_query
           <<~GQL
-            mutation 
+            mutation
             {
               createUser(
-                input: { 
-                  username: "", 
-                  email: "sillyboy@inwell.com" 
-                } 
-              ) 
+                input: {
+                  username: "",
+                  email: "sillyboy@inwell.com"
+                }
+              )
               {
                 user {
                   username
@@ -54,9 +55,20 @@ module Mutations
           expect(data).to be_a Hash
           expect(data[:createUser][:user]).to have_key(:username)
           expect(data[:createUser][:user]).to have_key(:email)
+          expect(data[:createUser][:user]).to have_key(:dashboard_metrics)
         end
 
-        it 'fails to create a user' do 
+        xit 'returns user metrics from python service' do
+          post '/graphql', params: { query: query }
+
+          data = parse_json[:data]
+
+          create_list(:story, 5, user_id: User.first.id)
+
+          require "pry"; binding.pry
+        end
+
+        it 'fails to create a user' do
           post '/graphql', params: { query: bad_query }
 
           response = parse_json

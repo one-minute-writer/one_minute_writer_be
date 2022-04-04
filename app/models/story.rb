@@ -8,4 +8,8 @@ class Story < ApplicationRecord
                         # :image,
                         :word
                         # :sound
+
+  def word_count
+    nil
+  end
 end

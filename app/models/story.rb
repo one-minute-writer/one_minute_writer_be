@@ -10,6 +10,6 @@ class Story < ApplicationRecord
                         # :sound
 
   def word_count
-    nil
+    self.body_text.split.size
   end
 end

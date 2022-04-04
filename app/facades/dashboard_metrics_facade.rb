@@ -5,4 +5,10 @@ class DashboardMetricsFacade
     UserDashboardMetrics.new(data)
   end
 
+  def self.post_writing_metrics(writing_id, word_count, total_time)
+    metrics = DashboardMetricsService.post_writing_metrics(writing_id, word_count, total_time)
+
+    MetricPost.new(metrics)
+  end
+
 end

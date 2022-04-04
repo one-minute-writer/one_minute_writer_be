@@ -84,7 +84,7 @@ query {
  - Request
 ```
 mutation {
-  createUser(input: 
+  createUser(input:
     { username: "Lassie", email: "sillyboy@inwell.com" } ) {
   	user {
     	username
@@ -117,7 +117,7 @@ mutation {
       username: "Bob Lee Swagger",
       email: "blees@gmail.com"
     }
-  ) { 
+  ) {
       user {
         username
         id
@@ -154,7 +154,7 @@ mutation {
           }
         }
       }
-        
+
 
 ```
  - Response
@@ -229,8 +229,8 @@ query {
  - Request
 ```
 mutation {
-  createStory(input: 
-    { userId: 1, title: "Thoughts", bodyText: "hello world", word: "test", image: "test_url", sound: "sample_url", totalTimeInSeconds: 120 } ) {
+  createStory(input:
+    { userId: 1, title: "Thoughts", bodyText: "hello world", word: "test", image: {author: "william", download_url: "http:test_url.com"}, sound: {title: "denver skyline", src: "http:beautifuldenver.com"}, totalTimeInSeconds: 120 } ) {
   	story {
     	title
     	bodyText
@@ -238,33 +238,43 @@ mutation {
         image
         sound
         totalTimeInSeconds
+      createdAt
+      updatedAt
     }
   }
 }
 ```
  - Response
  ```
-{
-    "data": {
-        "createStory": {
-            "story": {
-                "title": "Thoughts",
-                "bodyText": "hello world",
-                "word": "test",
-                "image": "test_url",
-                "sound": "sample_url",
-                "totalTimeInSeconds": 120
-            }
-        }
-    }
-}
+ {
+   "data": {
+     "createStory": {
+       "story": {
+         "title": "Thoughts",
+         "bodyText": "hello world",
+         "word": "test",
+         "image": {
+           "author": "william",
+           "download_url": "http:test_url.com"
+         },
+         "sound": {
+           "title": "denver skyline",
+           "src": "http:beautifuldenver.com"
+         },
+         "totalTimeInSeconds": 120,
+         "createdAt": "2022-04-04T17:36:45Z",
+         "updatedAt": "2022-04-04T17:36:45Z"
+       }
+     }
+   }
+ }
 ```
 
 ## Update Story
  - Request
 ```
 mutation {
-  updateStory(input: 
+  updateStory(input:
     { id: 2, title: "test", bodyText: "new body text", (other attributes etc.) } ) {
   	story {
     	title
@@ -299,7 +309,7 @@ mutation {
  - Request
 ```
 mutation {
-  deleteStory(input: 
+  deleteStory(input:
     { id: 14 } ) {
   	story {
     	title

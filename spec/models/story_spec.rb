@@ -14,8 +14,8 @@ RSpec.describe Story, type: :model do
     it { should validate_presence_of :title }
     it { should validate_presence_of :total_time_in_seconds }
     it { should validate_presence_of :body_text }
-    it { should validate_presence_of :image }
+    # it { should validate_presence_of :image }
     it { should validate_presence_of :word }
-    it { should validate_presence_of :sound }
+    # it { should validate_presence_of :sound }
   end
 end

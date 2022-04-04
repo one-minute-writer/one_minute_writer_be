@@ -1,14 +1,17 @@
 # GraphQL
 ## Table of Contents:
-* [Users](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#Users)
-  * [Get Users (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#get-users-query)
-  * [Get User (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#get-user-query)
-  * [Create New User](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#create-new-user)
-  * [Update User](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#update-user)
-  * [Delete User](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#delete-user)
-* [Stories](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#Stories)
-  * [Get Stories (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#get-stories-query)
-  * [Get Story (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/graphql/GraphqlNotes.md#get-story-query)
+* [Users](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#users)
+  * [Get Users (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#get-users-query)
+  * [Get User (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#get-user-query)
+  * [Create New User](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#create-new-user)
+  * [Update User](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#update-user)
+  * [Delete User](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#delete-user)
+* [Stories](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#stories)
+  * [Get Stories (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#get-stories-query)
+  * [Get Story (Query)](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#get-story-query)
+  * [Create Story](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#create-story)
+  * [Update Story](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#update-story)
+  * [Delete Story](https://github.com/one-minute-writer/one_minute_writer_be/blob/main/GraphqlNotes.md#delete-story)
 
 ## Users
 ### Get Users (Query)
@@ -219,5 +222,103 @@ query {
       "title": "dolor"
     }
   }
+}
+```
+
+## Create Story
+ - Request
+```
+mutation {
+  createStory(input: 
+    { userId: 1, title: "Thoughts", bodyText: "hello world", word: "test", image: "test_url", sound: "sample_url", totalTimeInSeconds: 120 } ) {
+  	story {
+    	title
+    	bodyText
+        word
+        image
+        sound
+        totalTimeInSeconds
+    }
+  }
+}
+```
+ - Response
+ ```
+{
+    "data": {
+        "createStory": {
+            "story": {
+                "title": "Thoughts",
+                "bodyText": "hello world",
+                "word": "test",
+                "image": "test_url",
+                "sound": "sample_url",
+                "totalTimeInSeconds": 120
+            }
+        }
+    }
+}
+```
+
+## Update Story
+ - Request
+```
+mutation {
+  updateStory(input: 
+    { id: 2, title: "test", bodyText: "new body text", (other attributes etc.) } ) {
+  	story {
+    	title
+    	bodyText
+        word
+        image
+        sound
+        totalTimeInSeconds
+    }
+  }
+}
+```
+ - Response
+ ```
+{
+    "data": {
+        "updateStory": {
+            "story": {
+                "title": "test",
+                "bodyText": "new body text",
+                "word": "example",
+                "image": "example",
+                "sound": "example",
+                "totalTimeInSeconds": 120
+            }
+        }
+    }
+}
+```
+
+## Delete Story
+ - Request
+```
+mutation {
+  deleteStory(input: 
+    { id: 14 } ) {
+  	story {
+    	title
+    	bodyText
+    }
+  }
+}
+
+```
+ - Response
+ ```
+{
+    "data": {
+        "deleteStory": {
+            "story": {
+                "title": "y",
+                "bodyText": "x"
+            }
+        }
+    }
 }
 ```

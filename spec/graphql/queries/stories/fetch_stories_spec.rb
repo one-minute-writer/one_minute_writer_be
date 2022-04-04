@@ -15,6 +15,8 @@ module Queries
               image
               sound
               totalTimeInSeconds
+              createdAt
+              updatedAt
             }
           }
         GQL
@@ -49,6 +51,8 @@ module Queries
           expect(story).to have_key(:image)
           expect(story).to have_key(:sound)
           expect(story).to have_key(:totalTimeInSeconds)
+          expect(story).to have_key(:createdAt)
+          expect(story).to have_key(:updatedAt)
         end
       end
 

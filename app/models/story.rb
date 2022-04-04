@@ -5,7 +5,7 @@ class Story < ApplicationRecord
                         :title,
                         :total_time_in_seconds,
                         :body_text,
-                        :image,
-                        :word,
-                        :sound
+                        # :image,
+                        :word
+                        # :sound
 end

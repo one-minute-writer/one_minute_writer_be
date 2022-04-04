@@ -8,16 +8,16 @@ module Mutations
           <<~GQL
             mutation {
               createStory(
-                input: { 
+                input: {
                   userId: #{User.last.id},
                  title: "Thoughts",
                   bodyText: "hello world",
                   word: "test",
                   image: "http://test-url",
                   sound: "echo",
-                  totalTimeInSeconds: 120 
-                } 
-              ) 
+                  totalTimeInSeconds: 120
+                }
+              )
               {
                 story {
                   title
@@ -26,6 +26,8 @@ module Mutations
                   image
                   sound
                   totalTimeInSeconds
+                  createdAt
+                  updatedAt
                 }
               }
             }
@@ -36,14 +38,14 @@ module Mutations
           <<~GQL
             mutation {
               createStory(
-                input: { 
+                input: {
                   title: "Thoughts",
                   bodyText: "hello world",
                   word: "test",
                   sound: "echo",
-                  totalTimeInSeconds: 120 
-                } 
-              ) 
+                  totalTimeInSeconds: 120
+                }
+              )
               {
             	  story {
                   title
@@ -71,6 +73,8 @@ module Mutations
           expect(story).to have_key(:image)
           expect(story).to have_key(:sound)
           expect(story).to have_key(:totalTimeInSeconds)
+          expect(story).to have_key(:createdAt)
+          expect(story).to have_key(:updatedAt)
         end
 
         it 'only accepts correct attributes' do
@@ -81,7 +85,7 @@ module Mutations
           response = parse_json
 
           expect(response[:errors].first[:message]).to eq("Argument 'userId' on InputObject 'CreateStoryInput' is required. Expected type Int!")
-          expect(response[:errors].last[:message]).to eq("Argument 'image' on InputObject 'CreateStoryInput' is required. Expected type String!")
+          expect(response[:errors].last[:message]).to eq("Argument 'image' on InputObject 'CreateStoryInput' is required. Expected type Image!")
         end
       end
     end

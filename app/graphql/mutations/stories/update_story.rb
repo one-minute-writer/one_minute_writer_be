@@ -5,8 +5,8 @@ module Mutations
       argument :title, String, required: false
       argument :body_text, String, required: false
       argument :word, String, required: false
-      argument :image, String, required: false
-      argument :sound, String, required: false
+      argument :image, Types::ImageType, required: false
+      argument :sound, Types::SoundType, required: false
       argument :total_time_in_seconds, Integer, required: false
 
       field :story, Types::StoryType, null: false

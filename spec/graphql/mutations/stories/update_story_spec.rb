@@ -11,13 +11,13 @@ module Mutations
                 id: #{Story.last.id},
                 title: "New Title",
                 bodyText: "New Text",
-                image: "Sample image",
+                image: { author: "Andrew", download_url: "http://test_url.com" },
                 word: "Update",
-                sound: "Alert!",
+                sound: { src: "http://sound_url.com", title: "Jumping Cat" },
                 totalTimeInSeconds: 5000
               }
             )
-            { 
+            {
               story {
                 id
                 title
@@ -26,6 +26,8 @@ module Mutations
                 word
                 sound
                 totalTimeInSeconds
+                createdAt
+                updatedAt
               }
             }
           }
@@ -40,13 +42,13 @@ module Mutations
                 id: 150150
                 title: "New Title",
                 bodyText: "New Text",
-                image: "Sample image",
+                image: { author: "Andrew", download_url: "http://test_url.com" },
                 word: "Update",
-                sound: "Alert!",
+                sound: { src: "http://sound_url.com", title: "Jumping Cat" },
                 totalTimeInSeconds: 5000
               }
             )
-            { 
+            {
               story {
                 id
                 title
@@ -69,13 +71,13 @@ module Mutations
                 id: #{Story.last.id}
                 title: "New Title",
                 bodyText: "New Text",
-                image: "Sample image",
+                image: { author: "Andrew", download_url: "http://test_url.com" },
                 word: "Update",
-                sound: 10,
+                sound: { src: "http://sound_url.com", title: "Jumping Cat" },
                 totalTimeInSeconds: 5000
               }
             )
-            { 
+            {
               story {
                 id
                 title
@@ -83,6 +85,8 @@ module Mutations
                 username
                 image
                 word
+                createdAt
+                updatedAt
               }
             }
           }
@@ -99,10 +103,12 @@ module Mutations
         expect(data[:updateStory][:story][:id]).to eq(story.id.to_s)
         expect(data[:updateStory][:story][:title]).to eq("New Title")
         expect(data[:updateStory][:story][:bodyText]).to eq("New Text")
-        expect(data[:updateStory][:story][:image]).to eq("Sample image")
+        expect(data[:updateStory][:story][:image]).to eq({:author=>"Andrew", :download_url=>"http://test_url.com"})
         expect(data[:updateStory][:story][:word]).to eq("Update")
-        expect(data[:updateStory][:story][:sound]).to eq("Alert!")
+        expect(data[:updateStory][:story][:sound]).to eq({:src=>"http://sound_url.com", :title=>"Jumping Cat"})
         expect(data[:updateStory][:story][:totalTimeInSeconds]).to eq(5000)
+        expect(data[:updateStory][:story][:createdAt]).to eq(story.created_at.strftime('%FT%TZ'))
+        expect(data[:updateStory][:story][:updatedAt]).to eq(story.updated_at.strftime('%FT%TZ'))
       end
 
       it 'story does not exist (sad path)' do
@@ -119,8 +125,7 @@ module Mutations
 
         message = parse_json[:errors]
 
-        expect(message.first[:message]).to eq("Argument 'sound' on InputObject 'UpdateStoryInput' has an invalid value. Expected type 'String'.")
-        expect(message.second[:message]).to eq("Field 'username' doesn't exist on type 'Story'")
+        expect(message.first[:message]).to eq("Field 'username' doesn't exist on type 'Story'")
       end
     end
   end

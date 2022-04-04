@@ -207,9 +207,17 @@ query {
  - Request
 ```
 query {
-  fetchStory(id: 1) {
+  fetchStory(id: 1)
+  {
     id
     title
+    word
+    bodyText
+    image
+    sound
+    totalTimeInSeconds
+    createdAt
+    updatedAt
   }
 }
 ```
@@ -219,7 +227,20 @@ query {
   "data": {
     "fetchStory": {
       "id": "1",
-      "title": "dolor"
+      "title": "The Doors of Perception",
+      "word": "sed",
+      "bodyText": "Dolores pariatur ea. Et ut omnis. Quia sequi autem. Ad deserunt ratione.",
+      "image": {
+        "author": "Archimedes",
+        "download_url": "http://mertz.io/romelia"
+      },
+      "sound": {
+        "src": "http://walker.org/amber.waters",
+        "title": "odit"
+      },
+      "totalTimeInSeconds": 298,
+      "createdAt": "2022-04-04T19:40:36Z",
+      "updatedAt": "2022-04-04T19:40:36Z"
     }
   }
 }
@@ -234,10 +255,10 @@ mutation {
   	story {
     	title
     	bodyText
-        word
-        image
-        sound
-        totalTimeInSeconds
+      word
+      image
+      sound
+      totalTimeInSeconds
       createdAt
       updatedAt
     }
@@ -274,15 +295,28 @@ mutation {
  - Request
 ```
 mutation {
-  updateStory(input:
-    { id: 2, title: "test", bodyText: "new body text", (other attributes etc.) } ) {
-  	story {
-    	title
-    	bodyText
-        word
-        image
-        sound
-        totalTimeInSeconds
+  updateStory(
+    input: {
+      id: 1,
+      title: "New Title",
+      bodyText: "New Text",
+      image: { author: "Andrew", download_url: "http://test_url.com" },
+      word: "Update",
+      sound: { src: "http://sound_url.com", title: "Jumping Cat" },
+      totalTimeInSeconds: 5000
+    }
+  )
+  {
+    story {
+      id
+      title
+      bodyText
+      image
+      word
+      sound
+      totalTimeInSeconds
+      createdAt
+      updatedAt
     }
   }
 }

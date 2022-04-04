@@ -44,14 +44,13 @@ module Mutations
           GQL
         end
 
-        it 'returns user metrics from python service' do
+        xit 'returns user metrics from python service' do
           post '/graphql', params: { query: query }
 
           data = parse_json[:data]
 
           create_list(:story, 5, user_id: User.first.id)
 
-          require "pry"; binding.pry
         end
       end
     end

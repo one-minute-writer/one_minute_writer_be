@@ -27,6 +27,14 @@ module Queries
         GQL
       end
 
+      before(:each) do
+        metrics_get_response = File.read('./spec/support/stubbed_api_responses/dashboard_metrics_get_response.json')
+
+        their_site = 'https://enigmatic-oasis-75046.herokuapp.com'
+
+        stub_request(:get, /#{their_site}.*/ ).to_return(body: metrics_get_response, status: 200)
+      end
+
       it 'gets a user by id' do
         create_list(:user, 4)
 

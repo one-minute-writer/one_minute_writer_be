@@ -17,7 +17,7 @@ module Mutations
                 user {
                     username
                     email
-                    dashboard_metrics
+                    dashboardMetrics
                 }
               }
             }
@@ -45,17 +45,17 @@ module Mutations
         end
 
         it 'creates a user' do
-          expect(User.count).to eq(0)
+          current_users = User.count
 
           post '/graphql', params: { query: query }
 
           data = parse_json[:data]
-
-          expect(User.count).to eq(1)
+          
+          expect(User.count).to eq(current_users + 1)
           expect(data).to be_a Hash
           expect(data[:createUser][:user]).to have_key(:username)
           expect(data[:createUser][:user]).to have_key(:email)
-          expect(data[:createUser][:user]).to have_key(:dashboard_metrics)
+          expect(data[:createUser][:user]).to have_key(:dashboardMetrics)
         end
 
         xit 'returns user metrics from python service' do

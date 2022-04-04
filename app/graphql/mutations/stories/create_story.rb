@@ -16,6 +16,8 @@ module Mutations
           user = User.find(attributes[:user_id])
           story = user.stories.create!(attributes)
 
+          DashboardMetricsFacade.post_writing_metrics(story.id, story.word_count, story.total_time_in_seconds)
+
           { story: story }
         rescue ActiveRecord::RecordInvalid => e
           GraphQL::ExecutionError.new("Invalid attributes for #{e.record.class}:"\

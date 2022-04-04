@@ -5,7 +5,10 @@ module Queries
       argument :id, ID, required: true
 
       def resolve(id:)
-        User.find(id)
+        user = User.find(id)
+        user.update_metrics
+        user
+
       rescue ActiveRecord::RecordNotFound => _e
         GraphQL::ExecutionError.new('User does not exist.')
       rescue ActiveRecord::RecordInvalid => e

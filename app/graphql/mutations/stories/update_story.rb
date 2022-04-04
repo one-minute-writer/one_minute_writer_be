@@ -16,6 +16,8 @@ module Mutations
           story = Story.find(attributes[:id])
           story.update(attributes)
 
+          DashboardMetricsFacade.post_writing_metrics(story.id, story.word_count, story.total_time_in_seconds)
+
           {story: story}
         rescue ActiveRecord::RecordNotFound => _e
           GraphQL::ExecutionError.new('Story does not exist.')

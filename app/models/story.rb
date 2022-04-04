@@ -8,4 +8,8 @@ class Story < ApplicationRecord
                         # :image,
                         :word
                         # :sound
+
+  def word_count
+    self.body_text.split.size
+  end
 end

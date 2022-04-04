@@ -60,6 +60,14 @@ module Mutations
           GQL
         end
 
+        before(:each) do
+          metrics_post_response = File.read('./spec/support/stubbed_api_responses/dashboard_metrics_post_response.json')
+
+          their_site = 'https://enigmatic-oasis-75046.herokuapp.com'
+
+          stub_request(:post, /#{their_site}.*/ ).to_return(body: metrics_post_response, status: 201)
+        end
+
         it 'can create a story' do
           create_list(:user, 5)
 

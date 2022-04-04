@@ -26,6 +26,8 @@ module Mutations
                   image
                   sound
                   totalTimeInSeconds
+                  createdAt
+                  updatedAt
                 }
               }
             }
@@ -71,6 +73,8 @@ module Mutations
           expect(story).to have_key(:image)
           expect(story).to have_key(:sound)
           expect(story).to have_key(:totalTimeInSeconds)
+          expect(story).to have_key(:createdAt)
+          expect(story).to have_key(:updatedAt)
         end
 
         it 'only accepts correct attributes' do

@@ -14,6 +14,8 @@ module Queries
               image
               sound
               totalTimeInSeconds
+              createdAt
+              updatedAt
             }
           }
         GQL
@@ -34,7 +36,7 @@ module Queries
         create_list(:story, 4, user_id: user.id)
         post '/graphql', params: { query: query }
         story = parse_json[:data][:fetchStory]
-
+        # binding.pry
         expect(story[:id]).to eq(user.stories.first.id.to_s)
         expect(story[:title]).to eq(user.stories.first.title)
         expect(story[:bodyText]).to eq(user.stories.first.body_text)
@@ -44,6 +46,8 @@ module Queries
         expect(story[:sound][:src]).to eq(user.stories.first.sound["src"])
         expect(story[:sound][:title]).to eq(user.stories.first.sound["title"])
         expect(story[:totalTimeInSeconds]).to eq(user.stories.first.total_time_in_seconds)
+        expect(story[:createdAt]).to eq(user.stories.first.created_at.strftime('%FT%TZ'))
+        expect(story[:updatedAt]).to eq(user.stories.first.updated_at.strftime('%FT%TZ'))
       end
 
 

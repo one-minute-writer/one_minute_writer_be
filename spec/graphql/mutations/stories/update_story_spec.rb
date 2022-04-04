@@ -26,6 +26,8 @@ module Mutations
                 word
                 sound
                 totalTimeInSeconds
+                createdAt
+                updatedAt
               }
             }
           }
@@ -105,6 +107,8 @@ module Mutations
         expect(data[:updateStory][:story][:word]).to eq("Update")
         expect(data[:updateStory][:story][:sound]).to eq({:src=>"http://sound_url.com", :title=>"Jumping Cat"})
         expect(data[:updateStory][:story][:totalTimeInSeconds]).to eq(5000)
+        expect(data[:updateStory][:story][:createdAt]).to eq(story.created_at.strftime('%FT%TZ'))
+        expect(data[:updateStory][:story][:updatedAt]).to eq(story.updated_at.strftime('%FT%TZ'))
       end
 
       it 'story does not exist (sad path)' do

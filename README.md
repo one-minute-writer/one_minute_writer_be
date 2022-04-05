@@ -10,13 +10,14 @@
 
 
 ## Table of Contents
-- [Getting Started]()
-- [Project Description]()
-- [Learning Goals for Project]()
-- [GraphQL Queries & Mutations]()
-- [Setup]()
-- [Testing]()
-- [Collaborators]()
+- <a href="#getting-started">Getting Started</a>
+- <a href="#project-description">Project Description</a>
+- <a href="#learning-goals-for-project">Learning Goals for Project</a>
+- <a href="#setup">Setup</a>
+- <a href="#testing">Testing</a>
+- <a href="#graphql-queries-and-mutations">GraphQL Queries and Mutations</a>
+- <a href="#references">References</a>
+- <a href="#contributors">Contributors</a>
 
 ----------
 
@@ -72,7 +73,7 @@ $ rails s
    - Please visit below graphql notes to see examples
 ----------
    
-## GraphQL Queries & Mutations
+## GraphQL Queries and Mutations
 
 ----------
 
@@ -95,6 +96,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/kevingloss"><img src="https://avatars.githubusercontent.com/u/83426676?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kevin Gloss</b></sub></a><br /><a href="https://github.com/one-minute-writer/one_minute_writer_be/commits?author=kevingloss" title="Code">💻</a> <a href="https://github.com/one-minute-writer/one_minute_writer_be/commits?author=kevingloss" title="Documentation">📖</a> <a href="#design-kevingloss" title="Design">🎨</a> <a href="#ideas-kevingloss" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-kevingloss" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/one-minute-writer/one_minute_writer_be/pulls?q=is%3Apr+reviewed-by%3Akevingloss" title="Reviewed Pull Requests">👀</a> <a href="#projectManagement-kevingloss" title="Project Management">📆</a></td>
+    <td align="center"><a href="https://github.com/dylan-harper"><img src="https://avatars.githubusercontent.com/u/39470230?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dylan Harper</b></sub></a><br /><a href="https://github.com/one-minute-writer/one_minute_writer_be/commits?author=dylan-harper" title="Code">💻</a> <a href="https://github.com/one-minute-writer/one_minute_writer_be/commits?author=dylan-harper" title="Documentation">📖</a> <a href="#design-dylan-harper" title="Design">🎨</a> <a href="#ideas-dylan-harper" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-dylan-harper" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/one-minute-writer/one_minute_writer_be/pulls?q=is%3Apr+reviewed-by%3Adylan-harper" title="Reviewed Pull Requests">👀</a> <a href="#projectManagement-dylan-harper" title="Project Management">📆</a></td>
   </tr>
 </table>
 
@@ -103,4 +105,4 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.

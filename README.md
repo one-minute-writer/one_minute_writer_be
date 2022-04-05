@@ -375,6 +375,61 @@ query {
 ```
 </details>
 
+#### Create Story
+
+<details>
+  <summary> Request </summary>
+
+Persists a single story object to the databse:
+  
+```graphql
+mutation {
+  createStory(input:
+    { userId: 1, title: "Thoughts", bodyText: "hello world", word: "test", image: {author: "william", download_url: "http:test_url.com"}, sound: {title: "denver skyline", src: "http:beautifuldenver.com"}, totalTimeInSeconds: 120 } ) {
+  	story {
+    	title
+    	bodyText
+      word
+      image
+      sound
+      totalTimeInSeconds
+      createdAt
+      updatedAt
+    }
+  }
+}
+```
+</details>
+  
+<details>
+  <summary> Response </summary>
+
+```graphql
+ {
+   "data": {
+     "createStory": {
+       "story": {
+         "title": "Thoughts",
+         "bodyText": "hello world",
+         "word": "test",
+         "image": {
+           "author": "william",
+           "download_url": "http:test_url.com"
+         },
+         "sound": {
+           "title": "denver skyline",
+           "src": "http:beautifuldenver.com"
+         },
+         "totalTimeInSeconds": 120,
+         "createdAt": "2022-04-04T17:36:45Z",
+         "updatedAt": "2022-04-04T17:36:45Z"
+       }
+     }
+   }
+ }
+```
+</details>
+
 ----------
 
 ## Reference:

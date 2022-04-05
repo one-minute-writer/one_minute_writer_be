@@ -168,7 +168,7 @@ query {
 <details>
   <summary> Request </summary>
 
-Persists a single users information to the database:
+Persists a single user's information to the database:
   
 ```graphql
 mutation {

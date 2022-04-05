@@ -279,6 +279,102 @@ mutation {
 ```
 </details>
 
+### Stories
+
+#### Get Stories (Query)
+
+<details>
+  <summary> Request </summary>
+
+Returns a list of story objects:
+  
+```graphql
+query {
+  fetchStories {
+    id
+    title
+    word
+  }
+}
+```
+</details>
+  
+<details>
+  <summary> Response </summary>
+
+```graphql
+  {
+  "data": {
+    "fetchStories": [
+      {
+        "id": "10",
+        "title": "expedita",
+        "word": "saepe"
+      },
+      {
+        "id": "9",
+        "title": "earum",
+        "word": "qui"
+      }, ...
+    ]
+  }
+}
+```
+</details>
+
+#### Get Story (Query)
+
+<details>
+  <summary> Request </summary>
+
+Returns a single story objects:
+  
+```graphql
+query {
+  fetchStory(id: 1)
+  {
+    id
+    title
+    word
+    bodyText
+    image
+    sound
+    totalTimeInSeconds
+    createdAt
+    updatedAt
+  }
+}
+```
+</details>
+  
+<details>
+  <summary> Response </summary>
+
+```graphql
+{
+  "data": {
+    "fetchStory": {
+      "id": "1",
+      "title": "The Doors of Perception",
+      "word": "sed",
+      "bodyText": "Dolores pariatur ea. Et ut omnis. Quia sequi autem. Ad deserunt ratione.",
+      "image": {
+        "author": "Archimedes",
+        "download_url": "http://mertz.io/romelia"
+      },
+      "sound": {
+        "src": "http://walker.org/amber.waters",
+        "title": "odit"
+      },
+      "totalTimeInSeconds": 298,
+      "createdAt": "2022-04-04T19:40:36Z",
+      "updatedAt": "2022-04-04T19:40:36Z"
+    }
+  }
+}
+```
+</details>
+
 ----------
 
 ## Reference:

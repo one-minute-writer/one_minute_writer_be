@@ -95,8 +95,7 @@ query {
 <details>
   <summary> Response </summary>
 
-Returns a list of user objects:
-```
+```graphql
  {
   "data": {
     "fetchUsers": [
@@ -111,6 +110,52 @@ Returns a list of user objects:
         "email": "j@gmail.com"
       }, ...
     ]
+  }
+}
+```
+</details>
+
+#### Get User (Query)
+
+<details>
+  <summary> Request </summary>
+
+Returns a single user object:
+  
+```graphql
+query {
+  fetchUser(id: 1) {
+    id
+    username
+    email
+    stories {
+      id
+      title
+      word
+    }
+  }
+}
+```
+</details>
+  
+<details>
+  <summary> Response </summary>
+
+```graphql
+ {
+  "data": {
+    "fetchUser": {
+      "id": "1",
+      "username": "Solon",
+      "email": "rodolfo.schoen@runte.com",
+      "stories": [
+        {
+          "id": "1",
+          "title": "Blood's a Rover",
+          "word": "aut"
+        },...
+      ]
+    }
   }
 }
 ```

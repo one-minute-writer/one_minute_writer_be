@@ -14,4 +14,14 @@ RSpec.describe User, type: :model do
     it { should validate_uniqueness_of :email }
   end
 
+  describe 'instance methods', :vcr do
+    it '#update_metrics' do
+      user = create(:user)
+      create(:story, id: 5, user_id: user.id)
+      require "pry"; binding.pry
+
+      expect(user.update_metrics)
+    end
+  end
+
 end

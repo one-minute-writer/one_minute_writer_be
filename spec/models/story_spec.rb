@@ -20,7 +20,7 @@ RSpec.describe Story, type: :model do
   end
 
   describe 'instance methods' do
-    #write edge cases for word_count
+
     it '#word_count' do
       story = create(:story, body_text: "I once knew a lad named Ben. He went to feed his Hens.")
       result = story.word_count

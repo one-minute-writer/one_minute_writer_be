@@ -18,8 +18,8 @@ class Story < ApplicationRecord
     elsif !self.image["author"].is_a?(String) || !self.image["download_url"].is_a?(String)
       false
     else
-      return true
+       true
     end
   end
-  
+
 end

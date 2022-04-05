@@ -198,6 +198,50 @@ mutation {
 ```
 </details>
 
+#### Update User
+
+<details>
+  <summary> Request </summary>
+
+Updates a user's information:
+  
+```graphql
+mutation {
+  updateUser(
+    input: {
+      id: "1",
+      username: "Bob Lee Swagger",
+      email: "blees@gmail.com"
+    }
+  ) {
+      user {
+        username
+        id
+        email
+      }
+    }
+}
+```
+</details>
+  
+<details>
+  <summary> Response </summary>
+
+```graphql
+{
+  "data": {
+    "updateUser": {
+      "user": {
+        "username": "Bob Lee Swagger",
+        "id": "1",
+        "email": "blees@gmail.com"
+      }
+    }
+  }
+}
+```
+</details>
+
 ----------
 
 ## Reference:

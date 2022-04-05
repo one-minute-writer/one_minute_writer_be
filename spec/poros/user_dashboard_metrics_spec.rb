@@ -33,12 +33,6 @@ RSpec.describe UserDashboardMetrics do
       end
     end
 
-    describe 'avg_words_per_min' do
-      it 'returns the avgerage words per minute for all time' do
-        expect(metrics.avg_words_per_min).to eq(metrics.total_words_all_time.to_f / metrics.number_of_minutes.to_f)
-      end
-    end
-
     describe 'hours_minutes_and_seconds' do
       it 'turns the total_time variable into a string of hours, minutes, and seconds' do
         expect(metrics.hours_minutes_and_seconds).to eq('00:01:00')

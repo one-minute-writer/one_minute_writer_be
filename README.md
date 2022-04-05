@@ -1,7 +1,4 @@
 <p align="center">
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
   <img src="https://user-images.githubusercontent.com/88853324/161361762-58350194-9b14-47b0-afc2-48632ef04d51.png">
 </p>
 
@@ -75,6 +72,50 @@ $ rails s
    
 ## GraphQL Queries and Mutations
 
+###  Users
+
+#### Get Users (Query)
+
+<details>
+  <summary> Request </summary>
+
+Returns a list of user objects:
+  
+```graphql
+query {
+  fetchUsers {
+    id
+    username
+    email
+  }
+}
+```
+</details>
+  
+<details>
+  <summary> Response </summary>
+
+Returns a list of user objects:
+```
+ {
+  "data": {
+    "fetchUsers": [
+      {
+        "id": "7",
+        "username": "Bob Ward",
+        "email": "bob@athens.com"
+      },
+      {
+        "id": "6",
+        "username": "Johnathan",
+        "email": "j@gmail.com"
+      }, ...
+    ]
+  }
+}
+```
+</details>
+
 ----------
 
 ## Reference:
@@ -87,6 +128,9 @@ $ rails s
 
 
 ## Contributors ✨
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 

@@ -17,6 +17,9 @@ RSpec.describe DashboardMetricsService do
 
         expect(metrics).to have_key(:total_time_all_time)
         expect(metrics[:total_time_all_time]).to be_a Integer
+
+        expect(metrics).to have_key(:average_words_per_minute)
+        expect(metrics[:average_words_per_minute]).to be_a Integer
       end
 
       it 'returns aggregated dashboard metrics data for provided ids when more than one ID' do

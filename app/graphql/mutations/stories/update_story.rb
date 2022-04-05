@@ -13,7 +13,10 @@ module Mutations
 
       def resolve(attributes)
         begin
+          require "pry"; binding.pry
           story = Story.find(attributes[:id])
+
+          #add line for validating image and sound?
           story.update(attributes)
 
           DashboardMetricsFacade.post_writing_metrics(story.id, story.word_count, story.total_time_in_seconds)

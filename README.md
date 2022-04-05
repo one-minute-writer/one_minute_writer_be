@@ -81,4 +81,3 @@ $ rails s
 
 ## Collaborators
 
-@all-contributors please add <@githubusername> for (list of contributions, types of contributions can be found here)

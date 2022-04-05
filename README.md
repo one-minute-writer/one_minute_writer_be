@@ -161,6 +161,43 @@ query {
 ```
 </details>
 
+#### Create New User
+
+<details>
+  <summary> Request </summary>
+
+Persists a single users information to the database:
+  
+```graphql
+mutation {
+  createUser(input:
+    { username: "Lassie", email: "sillyboy@inwell.com" } ) {
+  	user {
+    	username
+    	email
+    }
+  }
+}
+```
+</details>
+  
+<details>
+  <summary> Response </summary>
+
+```graphql
+{
+  "data": {
+    "createUser": {
+      "user": {
+        "username": "Lassie",
+        "email": "sillyboy@inwell.com"
+      }
+    }
+  }
+}
+```
+</details>
+
 ----------
 
 ## Reference:

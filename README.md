@@ -242,6 +242,43 @@ mutation {
 ```
 </details>
 
+#### Delete User
+
+<details>
+  <summary> Request </summary>
+
+Deletes a user from the database:
+  
+```graphql
+mutation {
+        deleteUser(
+          input: {
+            id: "3",
+          }
+        ) { user {
+            username
+          }
+        }
+      }
+```
+</details>
+  
+<details>
+  <summary> Response </summary>
+
+```graphql
+{
+  "data": {
+    "deleteUser": {
+      "user": {
+        "username": "Galen"
+      }
+    }
+  }
+}
+```
+</details>
+
 ----------
 
 ## Reference:

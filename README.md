@@ -1,4 +1,7 @@
 <p align="center">
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
   <img src="https://user-images.githubusercontent.com/88853324/161361762-58350194-9b14-47b0-afc2-48632ef04d51.png">
 </p>
 
@@ -82,3 +85,23 @@ $ rails s
 
 ## Collaborators
 
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/dylan-harper"><img src="https://avatars.githubusercontent.com/u/39470230?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dylan Harper</b></sub></a><br /><a href="https://github.com/one-minute-writer/one_minute_writer_be/commits?author=dylan-harper" title="Code">💻</a> <a href="https://github.com/one-minute-writer/one_minute_writer_be/commits?author=dylan-harper" title="Documentation">📖</a> <a href="#design-dylan-harper" title="Design">🎨</a> <a href="#ideas-dylan-harper" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-dylan-harper" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/one-minute-writer/one_minute_writer_be/pulls?q=is%3Apr+reviewed-by%3Adylan-harper" title="Reviewed Pull Requests">👀</a> <a href="#projectManagement-dylan-harper" title="Project Management">📆</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

@@ -16,5 +16,6 @@ class User < ApplicationRecord
 
     self.dashboard_metrics[:total_words_all_time] = metrics.total_words_all_time
     self.dashboard_metrics[:total_time] = metrics.total_time
+    self.dashboard_metrics[:average_words_per_minute] = metrics.average_words_per_minute
   end
 end

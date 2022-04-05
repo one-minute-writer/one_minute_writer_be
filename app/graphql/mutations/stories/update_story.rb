@@ -13,7 +13,6 @@ module Mutations
 
       def resolve(attributes)
         begin
-          require "pry"; binding.pry
           story = Story.find(attributes[:id])
 
           #add line for validating image and sound?

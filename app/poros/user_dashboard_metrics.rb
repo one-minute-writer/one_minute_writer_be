@@ -10,16 +10,6 @@ class UserDashboardMetrics
     @average_words_per_minute = data[:average_words_per_minute]
   end
 
-  # can add more calculation methods as microservice grows
-  def number_of_minutes
-    if @total_time <= 60
-      1.0
-    else
-      minutes = @total_time.to_f / 60.0
-      minutes.round(2)
-    end
-  end
-
   def hours_minutes_and_seconds
     hours = @total_time / (60*60) # number of seconds in a minute x number of minutes in an hour, 3600 seconds.
     minutes = (@total_time / 60) % 60 # the modulo operator (%) gives the remainder when leftside is divided by rightside. Ex: 121 % 60 = 1

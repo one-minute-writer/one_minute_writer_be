@@ -7,13 +7,14 @@
 
 
 ## Table of Contents
-- [Getting Started]()
-- [Project Description]()
-- [Learning Goals for Project]()
-- [GraphQL Queries & Mutations]()
-- [Setup]()
-- [Testing]()
-- [Collaborators]()
+- <a href="#getting-started">Getting Started</a>
+- <a href="#project-description">Project Description</a>
+- <a href="#learning-goals-for-project">Learning Goals for Project</a>
+- <a href="#setup">Setup</a>
+- <a href="#testing">Testing</a>
+- <a href="#graphql-queries-and-mutations">GraphQL Queries and Mutations</a>
+- <a href="#references">References</a>
+- <a href="#contributors">Contributors</a>
 
 ----------
 
@@ -69,7 +70,7 @@ $ rails s
    - Please visit below graphql notes to see examples
 ----------
    
-## GraphQL Queries & Mutations
+## GraphQL Queries and Mutations
 
 ----------
 

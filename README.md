@@ -74,7 +74,7 @@ $ rails s
 
 ###  Users
 
-#### Get Users (Query)
+#### - Get Users (Query)
 
 <details>
   <summary> Request </summary>
@@ -115,7 +115,7 @@ query {
 ```
 </details>
 
-#### Get User (Query)
+#### - Get User (Query)
 
 <details>
   <summary> Request </summary>
@@ -161,7 +161,7 @@ query {
 ```
 </details>
 
-#### Create New User
+#### - Create New User
 
 <details>
   <summary> Request </summary>
@@ -198,7 +198,7 @@ mutation {
 ```
 </details>
 
-#### Update User
+#### - Update User
 
 <details>
   <summary> Request </summary>
@@ -242,7 +242,7 @@ mutation {
 ```
 </details>
 
-#### Delete User
+#### - Delete User
 
 <details>
   <summary> Request </summary>
@@ -281,7 +281,7 @@ mutation {
 
 ### Stories
 
-#### Get Stories (Query)
+#### - Get Stories (Query)
 
 <details>
   <summary> Request </summary>
@@ -322,7 +322,7 @@ query {
 ```
 </details>
 
-#### Get Story (Query)
+#### - Get Story (Query)
 
 <details>
   <summary> Request </summary>
@@ -375,7 +375,7 @@ query {
 ```
 </details>
 
-#### Create Story
+#### - Create Story
 
 <details>
   <summary> Request </summary>
@@ -427,6 +427,64 @@ mutation {
      }
    }
  }
+```
+</details>
+
+#### - Update Story
+
+<details>
+  <summary> Request </summary>
+
+Update story attributes in database:
+  
+```graphql
+mutation {
+  updateStory(
+    input: {
+      id: 1,
+      title: "New Title",
+      bodyText: "New Text",
+      image: { author: "Andrew", download_url: "http://test_url.com" },
+      word: "Update",
+      sound: { src: "http://sound_url.com", title: "Jumping Cat" },
+      totalTimeInSeconds: 5000
+    }
+  )
+  {
+    story {
+      id
+      title
+      bodyText
+      image
+      word
+      sound
+      totalTimeInSeconds
+      createdAt
+      updatedAt
+    }
+  }
+}
+```
+</details>
+  
+<details>
+  <summary> Response </summary>
+
+```graphql
+{
+    "data": {
+        "updateStory": {
+            "story": {
+                "title": "test",
+                "bodyText": "new body text",
+                "word": "example",
+                "image": "example",
+                "sound": "example",
+                "totalTimeInSeconds": 120
+            }
+        }
+    }
+}
 ```
 </details>
 

@@ -8,7 +8,7 @@ RSpec.describe UserDashboardMetrics do
     expect(metrics).to be_a UserDashboardMetrics
     expect(metrics.total_words_all_time).to eq 50
     expect(metrics.total_time).to eq 60
-    expect(metrics.average_words_per_minute).to eq 75
+    expect(metrics.average_words_per_minute).to eq 74
   end
 
   describe 'instance methods' do

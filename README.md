@@ -2,9 +2,7 @@
   <img src="https://user-images.githubusercontent.com/88853324/161361762-58350194-9b14-47b0-afc2-48632ef04d51.png">
 </p>
 
-
 # Mod4 Group Project: One Minute Writer
-
 
 ## Table of Contents
 - <a href="#getting-started">Getting Started</a>
@@ -13,7 +11,7 @@
 - <a href="#setup">Setup</a>
 - <a href="#testing">Testing</a>
 - <a href="#graphql-queries-and-mutations">GraphQL Queries and Mutations</a>
-- <a href="#references">References</a>
+- <a href="#reference">References</a>
 - <a href="#contributors">Contributors</a>
 
 ----------
@@ -72,9 +70,9 @@ $ rails s
    
 ## GraphQL Queries and Mutations
 
-###  Users
+## Users
 
-#### - Get Users (Query)
+#### Get Users (Query)
 
 <details>
   <summary> Request </summary>
@@ -115,7 +113,9 @@ query {
 ```
 </details>
 
-#### - Get User (Query)
+---
+
+#### Get User (Query)
 
 <details>
   <summary> Request </summary>
@@ -161,7 +161,9 @@ query {
 ```
 </details>
 
-#### - Create New User
+---
+
+#### Create New User
 
 <details>
   <summary> Request </summary>
@@ -198,7 +200,9 @@ mutation {
 ```
 </details>
 
-#### - Update User
+---
+
+#### Update User
 
 <details>
   <summary> Request </summary>
@@ -242,7 +246,9 @@ mutation {
 ```
 </details>
 
-#### - Delete User
+---
+
+#### Delete User
 
 <details>
   <summary> Request </summary>
@@ -279,9 +285,9 @@ mutation {
 ```
 </details>
 
-### Stories
+## Stories
 
-#### - Get Stories (Query)
+#### Get Stories (Query)
 
 <details>
   <summary> Request </summary>
@@ -322,7 +328,9 @@ query {
 ```
 </details>
 
-#### - Get Story (Query)
+---
+
+#### Get Story (Query)
 
 <details>
   <summary> Request </summary>
@@ -375,7 +383,9 @@ query {
 ```
 </details>
 
-#### - Create Story
+---
+
+#### Create Story
 
 <details>
   <summary> Request </summary>
@@ -430,7 +440,9 @@ mutation {
 ```
 </details>
 
-#### - Update Story
+---
+
+#### Update Story
 
 <details>
   <summary> Request </summary>
@@ -488,6 +500,45 @@ mutation {
 ```
 </details>
 
+---
+
+#### Delete Story
+
+<details>
+  <summary> Request </summary>
+
+Remove story object from database:
+  
+```graphql
+mutation {
+  deleteStory(input:
+    { id: 14 } ) {
+  	story {
+    	title
+    	bodyText
+    }
+  }
+}
+```
+</details>
+  
+<details>
+  <summary> Response </summary>
+
+```graphql
+{
+    "data": {
+        "deleteStory": {
+            "story": {
+                "title": "y",
+                "bodyText": "x"
+            }
+        }
+    }
+}
+```
+</details>
+
 ----------
 
 ## Reference:
@@ -496,10 +547,7 @@ mutation {
 
 ----------
 
-## Collaborators
-
-
-## Contributors ✨
+## Contributors
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->

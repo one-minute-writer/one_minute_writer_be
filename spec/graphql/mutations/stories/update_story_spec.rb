@@ -92,7 +92,7 @@ module Mutations
           }
         GQL
       end
-      
+
       before(:each) do
         metrics_post_response = File.read('./spec/support/stubbed_api_responses/dashboard_metrics_post_response.json')
 

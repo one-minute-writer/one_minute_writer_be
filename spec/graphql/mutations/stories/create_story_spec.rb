@@ -30,6 +30,32 @@ module Mutations
           GQL
         end
 
+        def bad_attr_query
+          <<~GQL
+          mutation {
+            createStory(input:
+              { userId: #{User.last.id},
+                title: "Thoughts",
+                bodyText: "hello world",
+                word: 5000,
+                image: {author: "william", download_url: "http:test_url.com"},
+                sound: {title: "denver skyline", src: "http:beautifuldenver.com"},
+                totalTimeInSeconds: 120 } ) {
+              story {
+                title
+                bodyText
+                word
+                image
+                sound
+                totalTimeInSeconds
+                createdAt
+                updatedAt
+              }
+            }
+          }
+          GQL
+        end
+
         def bad_query
           <<~GQL
             mutation {
@@ -132,6 +158,16 @@ module Mutations
 
           expect(Story.all.length).to eq(0)
           expect(response[:errors].first[:message]).to eq("Invalid attributes for story: Image or Sound")
+        end
+
+        it 'will not accept invalid attributes' do
+          create_list(:user, 5)
+
+          post '/graphql', params: { query: bad_attr_query }
+
+          response = parse_json
+
+          expect(response[:errors][0][:message]).to eq("Argument 'word' on InputObject 'CreateStoryInput' has an invalid value. Expected type 'String!'.")
         end
       end
     end

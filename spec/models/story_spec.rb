@@ -14,9 +14,7 @@ RSpec.describe Story, type: :model do
     it { should validate_presence_of :title }
     it { should validate_presence_of :total_time_in_seconds }
     it { should validate_presence_of :body_text }
-    # it { should validate_presence_of :image }
     it { should validate_presence_of :word }
-    # it { should validate_presence_of :sound }
   end
 
   describe 'instance methods' do
@@ -26,6 +24,32 @@ RSpec.describe Story, type: :model do
       result = story.word_count
 
       expect(result).to eq(13)
+    end
+
+    it '#validate_image_sound_keys' do
+      story_data = {:user_id=>3511,
+                    :title=>"Thoughts",
+                    :body_text=>"hello world",
+                    :word=>"test",
+                    :image=>{"author"=>"william", "download_url"=>"http:test_url.com"},
+                    :sound=>{"title"=>"denver skyline", "src"=>"http:beautifuldenver.com"},
+                    :total_time_in_seconds=>120}
+
+      story = Story.new(story_data)
+
+      expect(story.validate_image_sound_keys).to be true
+
+      story_data = {:user_id=>3511,
+                    :title=>"Thoughts",
+                    :body_text=>"hello world",
+                    :word=>"test",
+                    :image=>{"name"=>"william", "download_url"=>"http:test_url.com"},
+                    :sound=>{"title"=>"denver skyline", "src"=>"http:beautifuldenver.com"},
+                    :total_time_in_seconds=>120}
+
+      story = Story.new(story_data)
+
+      expect(story.validate_image_sound_keys).to be false
     end
   end
 end

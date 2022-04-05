@@ -14,7 +14,7 @@ module Mutations
       def resolve(attributes)
         begin
           user = User.find(attributes[:user_id])
-          story = user.stories.create!(attributes)
+          story = user.stories.create(attributes)
 
           DashboardMetricsFacade.post_writing_metrics(story.id, story.word_count, story.total_time_in_seconds)
 

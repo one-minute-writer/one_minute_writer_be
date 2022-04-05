@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
       expect(user.dashboard_metrics).to eq({})
 
       user.update_metrics
-      
+
       expect(user.dashboard_metrics).to have_key(:total_words_all_time)
       expect(user.dashboard_metrics).to have_key(:total_time)
       expect(user.dashboard_metrics).to have_key(:average_words_per_minute)

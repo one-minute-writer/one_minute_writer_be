@@ -14,6 +14,8 @@ module Mutations
       def resolve(attributes)
         begin
           story = Story.find(attributes[:id])
+
+          #add line for validating image and sound?
           story.update(attributes)
 
           DashboardMetricsFacade.post_writing_metrics(story.id, story.word_count, story.total_time_in_seconds)
@@ -21,9 +23,6 @@ module Mutations
           {story: story}
         rescue ActiveRecord::RecordNotFound => _e
           GraphQL::ExecutionError.new('Story does not exist.')
-        rescue ActiveRecord::RecordInvalid => e
-          GraphQL::ExecutionError.new("Invalid attributes for #{e.record.class}:"\
-            " #{e.record.errors.full_messages.join(', ')}")
         end
       end
     end

@@ -36,7 +36,7 @@ module Queries
         create_list(:story, 4, user_id: user.id)
         post '/graphql', params: { query: query }
         story = parse_json[:data][:fetchStory]
-        # binding.pry
+
         expect(story[:id]).to eq(user.stories.first.id.to_s)
         expect(story[:title]).to eq(user.stories.first.title)
         expect(story[:bodyText]).to eq(user.stories.first.body_text)

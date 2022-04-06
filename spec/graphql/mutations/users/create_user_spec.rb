@@ -50,22 +50,12 @@ module Mutations
           post '/graphql', params: { query: query }
 
           data = parse_json[:data]
-          
+
           expect(User.count).to eq(current_users + 1)
           expect(data).to be_a Hash
           expect(data[:createUser][:user]).to have_key(:username)
           expect(data[:createUser][:user]).to have_key(:email)
           expect(data[:createUser][:user]).to have_key(:dashboardMetrics)
-        end
-
-        xit 'returns user metrics from python service' do
-          post '/graphql', params: { query: query }
-
-          data = parse_json[:data]
-
-          create_list(:story, 5, user_id: User.first.id)
-
-          require "pry"; binding.pry
         end
 
         it 'fails to create a user' do

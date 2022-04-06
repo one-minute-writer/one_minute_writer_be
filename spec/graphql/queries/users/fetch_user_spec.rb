@@ -10,6 +10,7 @@ module Queries
               id
               username
               email
+              dashboardMetrics
             }
           }
         GQL
@@ -55,6 +56,21 @@ module Queries
         data = parse_json
 
         expect(data[:errors].first[:message]).to eq('User does not exist.')
+      end
+
+      it 'will return a users dashboard metrics' do
+        create(:user, id: 1)
+        create(:story, id: 1)
+        create(:story, id: 2)
+        create(:story, id: 3)
+
+        post '/graphql', params: { query: query }
+
+        data = parse_json[:data]
+
+        expect(data[:fetchUser][:dashboardMetrics]).to have_key(:total_words_all_time)
+        expect(data[:fetchUser][:dashboardMetrics]).to have_key(:total_time)
+        expect(data[:fetchUser][:dashboardMetrics]).to have_key(:average_words_per_minute)
       end
     end
   end

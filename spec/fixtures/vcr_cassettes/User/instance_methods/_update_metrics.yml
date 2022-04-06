@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://enigmatic-oasis-75046.herokuapp.com/dashboard?writing_ids=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - gunicorn
+      Date:
+      - Tue, 05 Apr 2022 16:02:56 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept, Origin, Cookie
+      Allow:
+      - GET, OPTIONS, POST
+      Content-Length:
+      - '88'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Referrer-Policy:
+      - same-origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"total_words_all_time": 100, "total_time_all_time": 80, "average_words_per_minute":
+        75}'
+  recorded_at: Tue, 05 Apr 2022 16:02:56 GMT
+recorded_with: VCR 6.1.0

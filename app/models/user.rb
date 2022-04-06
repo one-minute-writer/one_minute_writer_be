@@ -4,7 +4,6 @@ class User < ApplicationRecord
   validates_presence_of :username, :email
   validates_uniqueness_of :email
 
-  #needs testing
   def update_metrics
     story_ids = []
 

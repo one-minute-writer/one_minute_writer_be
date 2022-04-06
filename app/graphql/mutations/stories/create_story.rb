@@ -14,14 +14,17 @@ module Mutations
       def resolve(attributes)
         begin
           user = User.find(attributes[:user_id])
-          story = user.stories.create!(attributes)
+          story = user.stories.new(attributes)
+
+          if !story.validate_image_sound_keys
+            return GraphQL::ExecutionError.new("Invalid attributes for story: Image or Sound")
+          end
+
+          story.save
 
           DashboardMetricsFacade.post_writing_metrics(story.id, story.word_count, story.total_time_in_seconds)
 
           { story: story }
-        rescue ActiveRecord::RecordInvalid => e
-          GraphQL::ExecutionError.new("Invalid attributes for #{e.record.class}:"\
-            " #{e.record.errors.full_messages.join(', ')}")
         end
       end
     end

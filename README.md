@@ -70,6 +70,8 @@ $ rails s
    
 ## GraphQL Queries and Mutations
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://god.postman.co/run-collection/307390ae3be7c540177e?action=collection%2Fimport)
+
 ## Users
 
 #### Get Users (Query)

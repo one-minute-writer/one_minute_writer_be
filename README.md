@@ -545,7 +545,15 @@ mutation {
 
 ## Reference:
 
+[Access One Minute Writer on Heroku](https://one-minute-writer.herokuapp.com/)
+
+
+
 [Project Specs and Overview](https://mod4.turing.edu/projects/capstone/expectations.html)
+
+[Dashboard Metrics Microservice](https://github.com/one-minute-writer/one_minute_writer_dashboard)
+
+[Front End Code Base](https://github.com/one-minute-writer/one_minute_writer_dashboard)
 
 ----------
 
